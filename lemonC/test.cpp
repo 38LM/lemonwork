@@ -1,5 +1,6 @@
-include<iostream>
+#include<iostream>
 int main()
 {
-  std:cout<<"hello"<<endl;
+	int age;
+	std::cout<<"hello"<<std::endl;
 }
