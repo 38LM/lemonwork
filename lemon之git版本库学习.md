@@ -105,3 +105,117 @@ $ git commit -m "改变的内容"
 
 整个git的流程图
 
+
+
+## 三、git和github链接
+
+1、当github上的文件更新时，怎么更新到本地仓库中
+
+1.1、查看是否链接成功：
+
+```
+$ ssh -T git@github.com
+```
+
+显示表示成功
+
+![image-20210910155236750](C:\Users\11304\AppData\Roaming\Typora\typora-user-images\image-20210910155236750.png)
+
+
+
+1.2、配置当前fork的仓库的原仓库地址
+
+```
+git remote add upstream (原仓库github地址)  git@github.com:38LM/lemonwork.git
+```
+
+
+
+1.3、查看当前仓库的远程仓库地址和原仓库地址
+
+```
+git remote -v
+```
+
+
+
+1.4、获取原仓库的更新。使用fetch更新，fetch后会被存储在一个本地分支upstream/master上
+
+```
+git fetch upstream
+```
+
+
+
+1.5、合并到本地分支。切换到本地master分支，合并upstream/master分支。
+
+```
+git merge upstream/master
+```
+
+
+
+1.6、这时候使用git log就能看到原仓库的更新
+
+```
+git log
+```
+
+
+
+2、当本地仓库中被修改时，将本地仓库通过git更新到github的方法
+
+```
+git push origin master
+```
+
+
+
+## 四、git基本操作
+
+1、删除仓库中的文件
+
+```
+git rm 文件名（test.cpp）
+```
+
+2、删除仓库中的文件夹
+
+```
+git rm -r 文件夹/
+```
+
+如果是空的文件夹，使用
+
+```
+git clean -fd untracked 文件夹
+```
+
+3、
+
+## 五、linux基本操作命令
+
+1、建立文件
+
+```
+$ touch 文件名（test.cpp） 
+```
+
+2、建立文件夹
+
+```
+$ mkdir 文件夹（test）
+```
+
+3、删除文件
+
+```
+$ rm 文件名（test.cpp）
+```
+
+4、删除文件夹
+
+```
+$ rm -r 文件夹
+```
+
